@@ -1,0 +1,2 @@
+# EmeltInfoSchillerGimi
+Emeltszintű info Schillergimi
