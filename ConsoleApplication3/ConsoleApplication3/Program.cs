@@ -10,20 +10,34 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            //string[] karakterekTomb = new string[5];
-            int[] array1 = new int[5];
-            Console.WriteLine("Adjál meg nekem 10 számot :) ");
-            for (int i = 0; i < 5; i++)
-            {
-                array1[i] = int.Parse(Console.ReadLine());
-                //karakterekTomb[i] = Console.ReadLine();
+            string[] karakterekTomb = new string[200];
+            //int[] array1 = new int[5];
+            Console.WriteLine("Adjál meg nekem 5 számot :) ");
+            int tombszamlalo = 0; 
+            while (Console.ReadLine() != "a") {
+                karakterekTomb[tombszamlalo]= Console.ReadLine();
+                tombszamlalo++;
             }
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    //array1[i] = int.Parse(Console.ReadLine());
+            //    karakterekTomb[i] = Console.ReadLine();
+            //}
             Console.WriteLine("Én mint a számítógép most kiírom amit te irtál :)");
             Console.ReadLine();
-            foreach (var e in array1)
+            int tombelemekSzama = tombszamlalo;
+            tombszamlalo = 0;
+            foreach (var e in karakterekTomb)
             {
-                
-                Console.WriteLine("Ezt irtad te :) = " + e);
+                if (tombszamlalo != tombelemekSzama)
+                {
+                    Console.WriteLine("Ezt irtad te :) = " + e);
+                }
+                else
+                {
+                    break;
+                }
+                tombszamlalo++;
             }
 
             Console.ReadKey();
