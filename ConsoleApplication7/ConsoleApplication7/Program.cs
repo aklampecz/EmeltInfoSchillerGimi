@@ -10,14 +10,18 @@ namespace ConsoleApplication7
     {
         static void Main(string[] args)
         {
-            string[,] kerdesEsValaszTomb = new string[3, 2] {   { "Szia", "Szia Én a gép vagyok" }, 
-                                                                { "és te", "Én a gép vagyok" },
-                                                                { "vége", "Szia Örültem Viszlát !" } };
+            string[,] kerdesEsValaszTomb = new string[5, 2] {   { "Szia", "Szia Én a gép vagyok" }, 
+                                                                { "Hogy vagy", "Jól és te?" },
+                                                                 { "jól mit csinálsz", "Programozok" },
+                                                                  { "Mit", "?" },
+                                                                   
+
+                                                                { "vége", "Szia jó volt veled !" } };
             string kerdes ="";
             string valasz="";
+            Console.Write(".--------------------------Ez egy olyan program ami válaszol pár kérdésre-----------------. ");
             do{
-                Console.Write("Kérlek írj valamit ! Ha nem tudod mit írj kérek egy \"?\" enter-t ");
-
+            Console.Write("Kérlek írj valamit ! Ha nem tudod mit írj kérek egy \"?\" enter-t ");
              kerdes = Console.ReadLine();
              if (kerdes.Equals("?"))
              {
@@ -31,9 +35,12 @@ namespace ConsoleApplication7
                  Console.ReadLine();
                  
                 }
+             if (!kerdes.Equals("vége"))
+             {
              Console.WriteLine(valasz);
-             Console.Write("Kélek nyomj enter az új kérdésedhez ! ");
-             Console.ReadLine();
+             Console.Write("Kérlek nyomj enter az új kérdésedhez ! ");
+             Console.ReadLine(); 
+             } 
             }while(kerdes != "vége");
         }
 
