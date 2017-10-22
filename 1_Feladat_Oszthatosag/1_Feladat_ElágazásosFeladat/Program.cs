@@ -12,18 +12,31 @@ namespace _1_Feladat_ElágazásosFeladat
         {
 
             int egyikSzamOsztando, masikSzamOszto, eredmeny;
-            bool oszthatoAKetSzam;
-            //ellenorzott beolvasas
-            Console.Write("Add meg az egyik számot (Osztandó): ");
-            egyikSzamOsztando = int.Parse(Console.ReadLine());
-            Console.Write("Add meg a másik számot (Osztó): ");
-            masikSzamOszto = int.Parse(Console.ReadLine());
-            if (masikSzamOszto.Equals(0))
+            Boolean oszthatoAKetSzam;
+            // 2. lépés ellenorzott beolvasas kell
+            Boolean vanOlyanSzamAmiNemFelelMeg;
+            vanOlyanSzamAmiNemFelelMeg = true;
+            do
             {
-                Console.WriteLine("Nullával nem lehet osztani valós számok számkörében");
-                Console.ReadKey();
-                Environment.Exit(1);
-            }
+                Console.Write("Add meg az egyik számot (Osztandó): ");
+                egyikSzamOsztando = int.Parse(Console.ReadLine());
+                Console.Write("Add meg a másik számot (Osztó): ");
+                masikSzamOszto = int.Parse(Console.ReadLine());
+                if (egyikSzamOsztando < 0 || masikSzamOszto <= 0)
+	            {
+		            vanOlyanSzamAmiNemFelelMeg = false;
+                    Console.WriteLine("A feladat szerint Pozitiv számok kellenek és az osztó nem lehet nulla, valós számok osztása számkörében");
+	            }
+            } while (!vanOlyanSzamAmiNemFelelMeg);
+
+
+            //mivel van beolvasás vizsgálat nem kell ez a feltétel most
+            //if (masikSzamOszto.Equals(0))
+            //{
+            //    Console.WriteLine("Nullával nem lehet osztani valós számok számkörében");
+            //    Console.ReadKey();
+            //    Environment.Exit(1);
+            //}
 
             oszthatoAKetSzam = (egyikSzamOsztando % masikSzamOszto == 0);
             if (oszthatoAKetSzam)
