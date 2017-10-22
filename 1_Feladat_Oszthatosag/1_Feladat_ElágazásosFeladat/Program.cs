@@ -15,7 +15,7 @@ namespace _1_Feladat_ElágazásosFeladat
             Boolean oszthatoAKetSzam;
             // 2. lépés ellenorzott beolvasas kell
             Boolean vanOlyanSzamAmiNemFelelMeg;
-            vanOlyanSzamAmiNemFelelMeg = true;
+            vanOlyanSzamAmiNemFelelMeg = true;// Most VAN mivel még egyszám sincs tehát nem felel meg semmi!
             do
             {
                 Console.Write("Add meg az egyik számot (Osztandó): ");
@@ -23,14 +23,18 @@ namespace _1_Feladat_ElágazásosFeladat
                 Console.Write("Add meg a másik számot (Osztó): ");
                 masikSzamOszto = int.Parse(Console.ReadLine());
                 if (egyikSzamOsztando < 0 || masikSzamOszto <= 0)
-	            {
-		            vanOlyanSzamAmiNemFelelMeg = false;
+                {
+                    vanOlyanSzamAmiNemFelelMeg = true;
                     Console.WriteLine("A feladat szerint Pozitiv számok kellenek és az osztó nem lehet nulla, valós számok osztása számkörében");
-	            }
-            } while (!vanOlyanSzamAmiNemFelelMeg);
+                }
+                else
+                {
+                    vanOlyanSzamAmiNemFelelMeg = false;
+                }
+            } while (vanOlyanSzamAmiNemFelelMeg);
 
 
-            //mivel van beolvasás vizsgálat nem kell ez a feltétel most
+            //2. lépés mivel van beolvasás vizsgálat nem kell ez a feltétel most
             //if (masikSzamOszto.Equals(0))
             //{
             //    Console.WriteLine("Nullával nem lehet osztani valós számok számkörében");
